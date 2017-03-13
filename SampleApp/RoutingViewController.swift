@@ -57,6 +57,10 @@ class RoutingViewController: UIViewController, RoutingSearchDelegate {
     LocationManager.sharedManager.requestWhenInUseAuthorization()
   }
 
+  override var prefersStatusBarHidden: Bool {
+    return false
+  }
+  
   func routeTo(_ point: PeliasMapkitAnnotation) {
     let routingController = OTRRoutingController();
     routingController.urlQueryComponents.add(URLQueryItem(name: "apiKey", value: "mapzen-2qQR7SX"))
